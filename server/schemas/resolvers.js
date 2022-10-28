@@ -1,7 +1,9 @@
+const { User, Photo } = require("../models");
+
 const resolvers = {
   Query: {
-    helloWorld: () => {
-      return "Hello world!";
+    photos: async () => {
+      return Photo.find().sort({ createdAt: -1 });
     },
   },
 };
