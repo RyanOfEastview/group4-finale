@@ -1,6 +1,6 @@
 :root {
   --primary: #ffa630;
-  --secondary: #611c35;
+  --secondary: #9c370f;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
   --light: #ffffff;
@@ -33,7 +33,11 @@ body {
   font-size: 20px;
   color: var(--light);
   /* background-color: #f3fffee1; */
-  background-color: var(--primary);
+  background: -webkit-linear-gradient(0deg, hsla(190, 77%, 88%, 1) 0%,
+   hsla(190, 76%, 82%, 1) 12.5%, hsla(189, 75%, 75%, 1) 25%,
+    hsla(190, 74%, 59%, 1) 37.5%, hsla(190, 100%, 41%, 1) 50%,
+     hsla(190, 74%, 59%, 1) 62.5%, hsla(189, 75%, 75%, 1) 75%,
+      hsla(190, 76%, 82%, 1) 87.5%, hsla(190, 77%, 88%, 1) 100%);
 
 }
 
@@ -43,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Karla', sans-serif;
+  font-family: sans-serif;
   font-weight: 700;
   margin: 5px 0;
   line-height: 1.25;
@@ -87,7 +91,7 @@ p {
 }
 
 a {
-  color: var(--light);
+  color: var(--dark);
   text-decoration: none;
 }
 
@@ -105,10 +109,11 @@ nav a {
   margin: 0 15px;
   transition: all 0.2s;
   font-family: "Indie Flower";
+  color: var(--secondary);
 }
 
 nav a:hover {
-  color: var(--secondary);
+  color: var(--dark);
   background-color: var(--dark);
 }
 
@@ -249,8 +254,9 @@ nav a:hover {
 
 footer {
   position: relative;
-  bottom: 10px;
-  background-color: var(--dark);
+  background: -webkit-linear-gradient(0deg, hsla(16, 65%, 68%, 1) 0%,
+   hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
+   hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
   padding: 35px 22px;
   display: flex;
   justify-content: space-around;
@@ -262,13 +268,13 @@ footer {
 }
 
 footer a {
-  color: white;
+  color: var(--secondary);
   text-decoration: underline;
   font-family: "Indie Flower";
 }
 
 footer h5 {
-  color: var(--light);
+  color: var(--secondary);
   font-family: "Indie Flower";
 }
 
@@ -825,7 +831,9 @@ footer h5 {
 }
 
 .bg-secondary {
-  background-color: var(--secondary);
+  background: -webkit-linear-gradient(0deg, hsla(16, 65%, 68%, 1) 0%,
+  hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
+  hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
 }
 
 .bg-tertiary {
