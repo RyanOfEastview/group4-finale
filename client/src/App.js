@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,6 +6,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -45,29 +45,30 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
-              <Route 
-                path="/" 
-                element={<Home />} 
+              <Route
+                path="/"
+                element={<Home />}
               />
-              <Route 
-                path="/login" 
-                element={<Login />} 
+              <Route
+                path="/login"
+                element={<Login />}
               />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
+              <Route
+                path="/signup"
+                element={<Signup />}
               />
-              <Route 
-                path="/profile" 
-                element={<Profile />} 
+              <Route path="/profile">
+                <Route path=":username" element={<Profile />} />
+                <Route path="" element={<Profile />} />
+              </Route>
+              <Route
+                path="/photo/:id"
+                element={<SinglePhoto />}
               />
-              <Route 
-                path="/photo/:id" 
-                element={<SinglePhoto />} 
-              />
-              <Route 
-                path="*" 
-                element={<NoMatch />} 
+
+              <Route
+                path="*"
+                element={<NoMatch />}
               />
             </Routes>
           </div>
@@ -77,5 +78,4 @@ function App() {
     </ApolloProvider>
   );
 }
-
 export default App;

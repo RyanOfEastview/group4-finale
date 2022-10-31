@@ -1,17 +1,17 @@
 import React from 'react';
-import PhotoList from '../components/PhotoList';
-import PhotoForm from '../components/PhotoForm';
-import FriendList from '../components/FriendList';
 
-import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
+import Auth from '../utils/auth';
 import { QUERY_PHOTOS, QUERY_ME_BASIC } from '../utils/queries';
+
+import PhotoList from '../components/PhotoList';
+import FriendList from '../components/FriendList';
+import PhotoForm from '../components/PhotoForm';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PHOTOS);
   const { data: userData } = useQuery(QUERY_ME_BASIC);
   const photos = data?.photos || [];
-
   const loggedIn = Auth.loggedIn();
 
   return (
@@ -26,10 +26,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <PhotoList
-              photos={photos}
-              title="Some Feed for Photo(s)..."
-            />
+            <PhotoList photos={photos} title="Some Feed for Photo(s)..." />
           )}
         </div>
         {loggedIn && userData ? (

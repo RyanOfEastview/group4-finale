@@ -22,13 +22,14 @@ const Profile = (props) => {
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/profile:username" />;
+    return <Navigate to="/profile" />;
   }
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
+  console.log(user);
   if (!user?.username) {
     return (
       <h4>
