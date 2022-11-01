@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import PhotoForm from '../components/PhotoForm';
@@ -24,12 +24,15 @@ const Profile = () => {
   const { data: myData } = useQuery(QUERY_ME_BASIC);
   const myfriendsList = myData?.me.friends;
   console.log(myfriendsList);
+  const friendUserNameArray = myfriendsList.map((friend) => friend.username
+  );
+  console.log(friendUserNameArray);
 
+  console.log(userParam + "Outside");
   const addedOrNot = () => {
     //get myFriends
-    const friendUserNameArray = myfriendsList.map((friend) => friend.username);
     const friendAns = friendUserNameArray.includes(userParam);
-
+    console.log(userParam + "Inside added?");
     console.log("yes friend?" + friendAns);
     if (friendAns) {
       return "Added Friend (Click to delete friend)";
@@ -38,9 +41,13 @@ const Profile = () => {
       return "Add Friend";
     }
   }
-  // console.log(notYourFriend());
+  console.log(addedOrNot());
 
   const [addFriendButtonText, setFriendButtonText] = useState(() => addedOrNot());
+
+  useEffect(() => {
+    setFriendButtonText(addedOrNot());
+  });
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -62,20 +69,20 @@ const Profile = () => {
 
   const handleClick = async (e) => {
     const buttonText = e.target.innerHTML;
+    console.log("how about here handleClick");
     try {
       if (addFriendButtonText === "Add Friend") {
         await addFriend({
           variables: { id: user._id },
         });
         setFriendButtonText("Added Friend (Click to delete friend)");
-        // e.target.innerHTML = "Added Friend (Click to delete friend)";
       }
-      else {
-        // e.target.innerHTML = "Add Friend";
+      else if (addFriendButtonText === "Added Friend (Click to delete friend)"){
+        console.log("Not here????");
         setFriendButtonText("Add Friend");
         //Delete Mutation function
       }
-      console.log(buttonText);
+      console.log(buttonText + "from here");
 
     } catch (e) {
       console.error(e);
