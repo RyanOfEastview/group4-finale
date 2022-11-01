@@ -9,7 +9,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME, QUERY_ME_BASIC } from '../utils/queries';
 import { ADD_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { includes } from 'lodash';
+// import { includes } from 'lodash';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -47,7 +47,8 @@ const Profile = () => {
 
   useEffect(() => {
     setFriendButtonText(addedOrNot());
-  });
+    // eslint-disable-next-line
+  }, []);
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -77,7 +78,7 @@ const Profile = () => {
         });
         setFriendButtonText("Added Friend (Click to delete friend)");
       }
-      else if (addFriendButtonText === "Added Friend (Click to delete friend)"){
+      else if (addFriendButtonText === "Added Friend (Click to delete friend)") {
         console.log("Not here????");
         setFriendButtonText("Add Friend");
         //Delete Mutation function
