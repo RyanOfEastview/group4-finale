@@ -1300,3 +1300,10 @@ footer h5 {
     align-items: center;
   }
 }
+
+/*MEDIA QUERY for Mobile*/
+@media screen and (max-width: 490px) {
+  footer h5 {
+    font-size: 10px;
+  }
+}
