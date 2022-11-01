@@ -22,17 +22,19 @@ const Profile = () => {
   const user = data?.me || data?.user || {};
 
   const { data: myData } = useQuery(QUERY_ME_BASIC);
-  const myfriendsList = myData?.me.friends;
+  const myfriendsList = myData?.me.friends || [];
   console.log(myfriendsList);
   const friendUserNameArray = myfriendsList.map((friend) => friend.username
   );
   console.log(friendUserNameArray);
 
-  console.log(userParam + "Outside");
+
   const addedOrNot = () => {
     //get myFriends
+    if (!friendUserNameArray) {
+      return "Hi";
+    }
     const friendAns = friendUserNameArray.includes(userParam);
-    console.log(userParam + "Inside added?");
     console.log("yes friend?" + friendAns);
     if (friendAns) {
       return "Added Friend (Click to delete friend)";
@@ -48,7 +50,7 @@ const Profile = () => {
   useEffect(() => {
     setFriendButtonText(addedOrNot());
     // eslint-disable-next-line
-  }, []);
+  });
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
