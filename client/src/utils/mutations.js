@@ -68,3 +68,17 @@ export const ADD_REACTION = gql`
     }
   }
 `;
+
+export const DELETE_FRIEND = gql`
+  mutation deleteFriend($id: ID!) {
+    deleteFriend(friendId: $id) {
+      _id
+      username
+      friendCount
+      friends {
+        _id
+        username
+      }
+    }
+  }
+`;

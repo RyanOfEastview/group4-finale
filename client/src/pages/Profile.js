@@ -7,7 +7,7 @@ import FriendList from '../components/FriendList';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME, QUERY_ME_BASIC } from '../utils/queries';
-import { ADD_FRIEND } from '../utils/mutations';
+import { ADD_FRIEND, DELETE_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
 // import { includes } from 'lodash';
 
@@ -15,6 +15,7 @@ const Profile = () => {
   const { username: userParam } = useParams();
 
   const [addFriend] = useMutation(ADD_FRIEND);
+  const [deleteFriend] = useMutation(DELETE_FRIEND);
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -81,9 +82,12 @@ const Profile = () => {
         setFriendButtonText("Added Friend (Click to delete friend)");
       }
       else if (addFriendButtonText === "Added Friend (Click to delete friend)") {
-        console.log("Not here????");
-        setFriendButtonText("Add Friend");
+        console.log("Delete here????");
         //Delete Mutation function
+        await deleteFriend({
+          variables: { id: user._id },
+        });
+        setFriendButtonText("Add Friend");
       }
       console.log(buttonText + "from here");
 

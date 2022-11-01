@@ -20,7 +20,7 @@ const PhotoList = ({ photos, title }) => {
               >
                 {photo.username}
               </Link>{' '}
-              photo on {photo.createdAt}
+              posted photo on {photo.createdAt}
             </p>
             <div className="card-body">
               <Link to={`/photo/${photo._id}`}>

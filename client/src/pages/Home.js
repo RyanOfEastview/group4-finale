@@ -26,7 +26,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <PhotoList photos={photos} title="Some Feed for Photo(s)..." />
+            <PhotoList photos={photos} title="Photo(s) Feed (where the memories stay forever)..." />
           )}
         </div>
         {loggedIn && userData ? (
