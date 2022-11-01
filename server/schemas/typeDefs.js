@@ -47,6 +47,7 @@ type User {
     addPhoto(photoText: String!): Photo
     addReaction(photoId: ID!, reactionBody: String!): Photo
     addFriend(friendId: ID!): User
+    deleteFriend(friendId: ID!): User
   }
 `;
 
