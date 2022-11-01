@@ -23,7 +23,7 @@ Github repository: https://github.com/RyanOfEastview/group4-finale
 -[Questions](#questions)        
 
 ## Installation         
-If you are setting the project up in your local computer, run "npm i" in your terminal after downloading the files. Next, type "npm run seeds" in the root directory. Finally, type "npm run develop" to start the application. After that, you will be directed to "http://localhost:3001/". You will be able to see the vacation memories web application.                
+If you are setting the project up in your local computer, you can download the files and run "npm i" in your root directory terminal. Next, type "npm run seeds" in the root directory terminal. Finally, type "npm run develop" to start the application. After that, you will be directed to "http://localhost:3001/". You will be able to see the vacation memories web application.                
 
 ## Usage         
 You can see a few photos posted on the homepage.           
