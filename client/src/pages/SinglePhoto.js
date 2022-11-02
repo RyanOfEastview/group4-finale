@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_PHOTO } from '../utils/queries';
 import ReactionList from '../components/ReactionList';
@@ -23,9 +23,10 @@ const SinglePhoto = props => {
     <div>
       <div className="card mb-3">
         <p className="card-header">
-          <span style={{ fontWeight: 700 }} className="text-light">
+          <Link
+            to={`/profile/${photo.username}`} style={{ fontWeight: 700 }} className="text-light">
             {photo.username}
-          </span>{' '}
+          </Link>{' '}
           photo on {photo.createdAt}
         </p>
         <div className="card-body">

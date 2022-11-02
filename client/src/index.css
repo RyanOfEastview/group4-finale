@@ -5,10 +5,10 @@
   --quatrinary: #cadbda;
   --light: #ffffff;
   --black: #000000;
-  --border-color:#6359b1;
-  --card-top:#55a1ff;
-  --card-body:#f5f5dc;
-  --word:#2a1f7c;
+  --border-color: #6359b1;
+  --card-top: #55a1ff;
+  --card-body: #f5f5dc;
+  --word: #2a1f7c;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -36,9 +36,9 @@ body {
   font-size: 20px;
   color: var(--word);
   background: -webkit-linear-gradient(0deg, hsla(190, 77%, 88%, 1) 0%,
-   hsla(190, 76%, 82%, 1) 12.5%, hsla(189, 75%, 75%, 1) 25%,
-    hsla(190, 74%, 59%, 1) 37.5%, hsla(190, 100%, 41%, 1) 50%,
-     hsla(190, 74%, 59%, 1) 62.5%, hsla(189, 75%, 75%, 1) 75%,
+      hsla(190, 76%, 82%, 1) 12.5%, hsla(189, 75%, 75%, 1) 25%,
+      hsla(190, 74%, 59%, 1) 37.5%, hsla(190, 100%, 41%, 1) 50%,
+      hsla(190, 74%, 59%, 1) 62.5%, hsla(189, 75%, 75%, 1) 75%,
       hsla(190, 76%, 82%, 1) 87.5%, hsla(190, 77%, 88%, 1) 100%);
 
 }
@@ -139,16 +139,18 @@ nav a:hover {
   outline: none;
   background-color: var(--card-top);
   transition: all 0.5s;
-  cursor: pointer;
 }
 
-.btn:hover{
+.pill{
+  border: 3px solid var(--border-color);
+}
+.btn:hover {
   color: var(--card-top);
   background-color: var(--word);
-  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.btn:hover a{
+.btn:hover a {
   color: var(--card-top);
 }
 
@@ -177,13 +179,17 @@ nav a:hover {
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
+.card-header a:hover {
+  color: var(--word);
+}
+
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
   background-color: var(--card-body);
 }
 
-.card-body h4 a:hover{
+.card-body h4 a:hover {
   color: var(--black);
 }
 
@@ -271,19 +277,20 @@ nav a:hover {
   transform: scale(1);
 }
 
-.friendlist-top, .search-place:hover{
+.friendlist-top,
+.search-place:hover {
   text-decoration: underline;
 }
 
-.reaction-count:hover{
+.reaction-count:hover {
   font-weight: bold;
 }
 
 footer {
   position: relative;
   background: -webkit-linear-gradient(0deg, hsla(16, 65%, 68%, 1) 0%,
-   hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
-   hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
+      hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
+      hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
   padding: 35px 22px;
   display: flex;
   justify-content: space-around;
@@ -860,8 +867,8 @@ footer h5 {
 
 .bg-secondary {
   background: -webkit-linear-gradient(0deg, hsla(16, 65%, 68%, 1) 0%,
-  hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
-  hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
+      hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
+      hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
 }
 
 .bg-tertiary {
@@ -874,6 +881,12 @@ footer h5 {
 
 .bg-black {
   background-color: var(--black);
+}
+
+.find-friends{
+  background-color: var(--card-body);
+  color: var(--word);
+  border-radius: var(--border-radius);
 }
 
 /* FLEX CONTENT */
