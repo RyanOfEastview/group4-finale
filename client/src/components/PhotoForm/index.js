@@ -62,12 +62,6 @@ const PhotoForm = () => {
             </p>
             <form className="flex-row justify-center justify-space-between-md align-stretch"
                 onSubmit={handleFormSubmit}>
-                <textarea
-                    placeholder="Here's a new photo..."
-                    value={photoText}
-                    className="form-input col-12 col-md-9"
-                    onChange={handleChange}
-                ></textarea>
                 <div>
                     <textarea
                         placeholder="Insert Place..."
@@ -82,6 +76,13 @@ const PhotoForm = () => {
                     // onChange={handleChange}
                     ></textarea>
                 </div>
+                <textarea
+                    placeholder="Here's a new photo..."
+                    value={photoText}
+                    className="form-input col-12 col-md-9"
+                    onChange={handleChange}
+                ></textarea>
+
 
                 <button className="btn col-12 col-md-3" type="submit">
                     Submit
