@@ -2,7 +2,7 @@
 
 ## Description
 
-We are Group4, consists of Hiu Sum Jaime Yue, Spencer Cole, Ryan McCarthy.
+We are Group4, consisting of Hiu Sum Jaime Yue & Ryan McCarthy.
 
 This is GROUP4 - Vacation Memories, a vacation memories web application that allows user to post and comment on vacation photos.  
 When you open the vacation memories web application, you can see the.
@@ -26,7 +26,7 @@ Github repository: https://github.com/RyanOfEastview/group4-finale
 
 ## Installation
 
-If you are setting the project up in your local computer, you can download the files and run "npm i" in your root directory terminal. Next, type "npm run seeds" in the root directory terminal. Finally, type "npm run develop" to start the application. After that, you will be directed to "http://localhost:3001/". You will be able to see the vacation memories web application.
+If you are setting the project up in your local computer, you can download the files and run "npm i" in your root directory terminal. Next, type "npm run seed" in the root directory terminal. Finally, type "npm run develop" to start the application. After that, you will be directed to "http://localhost:3001/". You will be able to see the vacation memories web application.
 
 ## Usage
 
@@ -54,6 +54,6 @@ Ryan McCarthy -- Apollo
 ## Questions
 
 If you have any questions about the project,
-the github link and email address of one of the authors are shown below.  
-Github: [Github](https://github.com/HiuSumJaimeYue)
-& Email: [hiusumjaimeyue@cmail.carleton.ca](mailto:hiusumjaimeyue@cmail.carleton.ca)
+the github link and email address of the authors are shown below.  
+Github: [Github](https://github.com/HiuSumJaimeYue), (https://github.com/RyanOfEastview)
+& Email: [hiusumjaimeyue@cmail.carleton.ca](mailto:hiusumjaimeyue@cmail.carleton.ca), [ryanmccarthy613@gmail.com](mailto:ryanmccarthy613@gmail.com)
