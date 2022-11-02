@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -38,12 +38,13 @@ export const ADD_FRIEND = gql`
   }
 `;
 
-
 export const ADD_PHOTO = gql`
   mutation addPhoto($photoText: String!) {
     addPhoto(photoText: $photoText) {
       _id
       photoText
+      photoPlace
+      photoLink
       createdAt
       username
       reactionCount
