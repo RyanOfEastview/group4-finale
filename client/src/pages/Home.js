@@ -32,6 +32,7 @@ const Home = () => {
         {loggedIn && userData ? (
           <div className="col-12 col-lg-3 mb-3">
             <FriendList
+              currentUser={true}
               username={userData.me.username}
               friendCount={userData.me.friendCount}
               friends={userData.me.friends}

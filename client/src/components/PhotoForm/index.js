@@ -75,7 +75,7 @@ const PhotoForm = () => {
     return (
         <div>
             <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
-                Character Count for Text: {characterCount}/280
+                Character Count for photo text: {characterCount}/280
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
             <form className="flex-row justify-center justify-space-between-md align-stretch"
@@ -97,7 +97,7 @@ const PhotoForm = () => {
                     ></textarea>
                 </div>
                 <textarea
-                    placeholder="Any background story or your vacation memories for the photo that you want to share with others"
+                    placeholder="Insert Photo Text: Any background story or your vacation memories for the photo that you want to share with others"
                     value={photoText}
                     id="photo-text"
                     className="form-input col-12 col-md-9"
