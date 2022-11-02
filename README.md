@@ -2,7 +2,7 @@
 
 ## Description
 
-We are Group4, consists of Hiu Sum Jaime Yue, Spencer Cole, Ryan McCarthy.
+We are Group4, consists of Hiu Sum Jaime Yue and Ryan McCarthy.
 
 This is GROUP4 - Vacation Memories, a vacation memories web application that allows user to post and comment on vacation photos.  
 When you open the vacation memories web application, you can see the.
