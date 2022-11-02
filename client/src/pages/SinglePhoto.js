@@ -29,6 +29,9 @@ const SinglePhoto = props => {
           photo on {photo.createdAt}
         </p>
         <div className="card-body">
+          {/* <img src={photo.link}} className="my-2 photo-pic" alt={place} /> //alt can be anything*/}
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"
+            className="my-2 photo-pic" alt="new-pic" />
           <p>{photo.photoText}</p>
         </div>
       </div>
