@@ -11,10 +11,12 @@ const ReactionList = ({ reactions }) => {
                 {reactions &&
                     reactions.map(reaction => (
                         <p className="pill mb-3" key={reaction._id}>
-                            {reaction.reactionBody} {'// '}
+                            {reaction.reactionBody} <br></br>
+                            {'  by '}
                             <Link to={`/profile/${reaction.username}`} style={{ fontWeight: 700 }}>
-                                {reaction.username} on {reaction.createdAt}
+                                {reaction.username} 
                             </Link>
+                                <span> on {reaction.createdAt} </span>
                         </p>
                     ))}
             </div>

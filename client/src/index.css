@@ -4,7 +4,11 @@
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
   --light: #ffffff;
-  --dark: #6c7575;
+  --black: #000000;
+  --border-color:#6359b1;
+  --card-top:#55a1ff;
+  --card-body:#f5f5dc;
+  --word:#2a1f7c;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -27,12 +31,10 @@ body {
 body {
   margin: 0;
   padding: 0;
-  /* font-family: 'Inconsolata', monospace; */
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
-  color: var(--light);
-  /* background-color: #f3fffee1; */
+  color: var(--word);
   background: -webkit-linear-gradient(0deg, hsla(190, 77%, 88%, 1) 0%,
    hsla(190, 76%, 82%, 1) 12.5%, hsla(189, 75%, 75%, 1) 25%,
     hsla(190, 74%, 59%, 1) 37.5%, hsla(190, 100%, 41%, 1) 50%,
@@ -91,13 +93,13 @@ p {
 }
 
 a {
-  color: var(--dark);
+  color: var(--word);
   text-decoration: none;
 }
 
-a:visited {
+/* a:visited {
   color: inherit;
-}
+} */
 
 nav {
   width: 100%;
@@ -113,8 +115,9 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--dark);
-  background-color: var(--dark);
+  color: var(--light);
+  background-color: var(--word);
+  border-radius: var(--border-radius);
 }
 
 .page-title {
@@ -132,22 +135,25 @@ nav a:hover {
   margin: 5px 0;
   border-radius: var(--border-radius);
   border: none;
-  color: var(--dark);
+  color: var(--word);
   outline: none;
-  background-color: var(--secondary);
+  background-color: var(--card-top);
   transition: all 0.5s;
   cursor: pointer;
 }
 
-.btn:hover,
-.pill:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
+.btn:hover{
+  color: var(--card-top);
+  background-color: var(--word);
+  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.btn:hover a,
+.btn:hover a{
+  color: var(--card-top);
+}
+
 .pill:hover a {
-  color: var(--secondary);
+  color: var(--card-body);
 }
 
 .btn-inline {
@@ -157,16 +163,16 @@ nav a:hover {
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
+  border: 3px solid var(--border-color);
   border-radius: var(--border-radius);
   background-color: var(--light);
-  color: var(--dark);
+  color: var(--black);
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--light);
   margin: 0;
-  background-color: var(--dark);
+  background-color: var(--card-top);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -174,6 +180,7 @@ nav a:hover {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
+  background-color: var(--card-body);
 }
 
 /* FORM */
@@ -193,7 +200,7 @@ nav a:hover {
   padding: 0.75rem;
   margin: 0.2rem 0;
   font-size: 1.2rem;
-  border: 2px solid var(--dark);
+  border: 2px solid var(--black);
   border-radius: var(--border-radius);
 }
 
@@ -251,6 +258,10 @@ nav a:hover {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+.friendlist-top{
+  text-decoration: underline;
 }
 
 footer {
@@ -816,10 +827,11 @@ footer h5 {
 
 .text-light {
   color: var(--light);
+  text-decoration: none;
 }
 
-.text-dark {
-  color: var(--dark);
+.text-black {
+  color: var(--black);
 }
 
 .text-error {
@@ -845,8 +857,8 @@ footer h5 {
   background-color: var(--light);
 }
 
-.bg-dark {
-  background-color: var(--dark);
+.bg-black {
+  background-color: var(--black);
 }
 
 /* FLEX CONTENT */

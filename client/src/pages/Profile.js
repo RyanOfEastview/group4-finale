@@ -9,7 +9,6 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME, QUERY_ME_BASIC } from '../utils/queries';
 import { ADD_FRIEND, DELETE_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
-// import { includes } from 'lodash';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -24,10 +23,8 @@ const Profile = () => {
 
   const { data: myData } = useQuery(QUERY_ME_BASIC);
   const myfriendsList = myData?.me.friends || [];
-  console.log(myfriendsList);
   const friendUserNameArray = myfriendsList.map((friend) => friend.username
   );
-  console.log(friendUserNameArray);
 
 
   const addedOrNot = () => {
@@ -36,7 +33,6 @@ const Profile = () => {
       return "Hi";
     }
     const friendAns = friendUserNameArray.includes(userParam);
-    console.log("yes friend?" + friendAns);
     if (friendAns) {
       return "Added Friend (Click to delete friend)";
     }
@@ -44,7 +40,6 @@ const Profile = () => {
       return "Add Friend";
     }
   }
-  console.log(addedOrNot());
 
   const [addFriendButtonText, setFriendButtonText] = useState(() => addedOrNot());
 
@@ -73,7 +68,6 @@ const Profile = () => {
 
   const handleClick = async (e) => {
     const buttonText = e.target.innerHTML;
-    console.log("how about here handleClick");
     try {
       if (addFriendButtonText === "Add Friend") {
         await addFriend({
@@ -82,14 +76,12 @@ const Profile = () => {
         setFriendButtonText("Added Friend (Click to delete friend)");
       }
       else if (addFriendButtonText === "Added Friend (Click to delete friend)") {
-        console.log("Delete here????");
         //Delete Mutation function
         await deleteFriend({
           variables: { id: user._id },
         });
         setFriendButtonText("Add Friend");
       }
-      console.log(buttonText + "from here");
 
     } catch (e) {
       console.error(e);
@@ -99,8 +91,8 @@ const Profile = () => {
   return (
     <div>
       <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+        <h2 className="bg-dark display-inline-block">
+          Welcome to {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
         {Auth.loggedIn() && userParam && (
