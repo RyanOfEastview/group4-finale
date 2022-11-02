@@ -23,13 +23,18 @@ const PhotoList = ({ photos, title }) => {
               posted photo on {photo.createdAt}
             </p>
             <div className="card-body">
-              <Link to={`/photo/${photo._id}`}>
-                {/* <img src={photo.link}} className="my-2 photo-pic" alt={place} /> //alt can be anything*/}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg" 
+              {/* <img src={photo.link}} className="my-2 photo-pic" alt={place} /> //alt can be anything*/}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"
                 className="my-2 photo-pic" alt="new-pic" />
-                <p>{photo.photoText}</p>
+              <div>
+                { /*src=`https://www.google.com/maps/place/${photo.place}`*/}
+                <a href='https://www.google.com/maps/place/Vancouver' target="_blank"
+                  rel="noopener noreferrer">Map</a>
+              </div>
+              <p>{photo.photoText}</p>
+              <Link to={`/photo/${photo._id}`}>
                 <p className="mb-0">
-                  Reactions: {photo.reactionCount} || Click to{' '}
+                  Reactions: {photo.reactionCount} || Click here to{' '}
                   {photo.reactionCount ? 'see' : 'start'} the discussion!
                 </p>
               </Link>
