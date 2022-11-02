@@ -37,6 +37,42 @@ db.once('open', async () => {
 
   // create photos
   let createdPhotos = [];
+
+  // const photoInfo = [
+  //   {
+  //     place: 'Vancouver', picLink: "www.xxx"
+  //   },
+  //   {
+  //     place: 'Osaka', picLink: "www.xxx"
+  //   },
+  //   {
+  //     place: 'New York', picLink: "www.xxx"
+  //   },
+  //   {
+  //     place: 'Seattle', picLink: "www.xxx"
+  //   },
+  //   {
+  //     place: 'Toronto', picLink: "www.xxx"
+  //   },
+  //   {
+  //     place: 'Hong Kong', picLink: "www.xxx"
+  //   },
+  //   {
+  //     place: 'Tokyo', picLink: "www.xxx"
+  //   }
+  //   ,
+  //   {
+  //     place: 'London', picLink: "www.xxx"
+  //   }
+  //   ,
+  //   {
+  //     place: 'Sweden', picLink: "www.xxx"
+  //   }
+  //   ,
+  //   {
+  //     place: 'Madrid', picLink: "www.xxx"
+  //   }];
+
   for (let i = 0; i < 10; i += 1) {
     const photoText = faker.lorem.words(Math.round(Math.random() * 10) + 1);
 
@@ -44,6 +80,8 @@ db.once('open', async () => {
     const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
     const createdPhoto = await Photo.create({ photoText, username });
+    // const createdPhoto = await Photo.create({ photoText,
+    // username, photoInfo.place, photoInfo.picLink });
 
     const updatedUser = await User.updateOne(
       { _id: userId },

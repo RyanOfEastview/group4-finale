@@ -183,6 +183,10 @@ nav a:hover {
   background-color: var(--card-body);
 }
 
+.card-body h4 a:hover{
+  color: var(--black);
+}
+
 .photo-pic {
   max-height: 200px;
   max-width: 150px;
@@ -267,8 +271,12 @@ nav a:hover {
   transform: scale(1);
 }
 
-.friendlist-top{
+.friendlist-top, .search-place:hover{
   text-decoration: underline;
+}
+
+.reaction-count:hover{
+  font-weight: bold;
 }
 
 footer {

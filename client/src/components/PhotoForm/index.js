@@ -5,6 +5,9 @@ import { QUERY_PHOTOS, QUERY_ME } from '../../utils/queries';
 
 const PhotoForm = () => {
     const [photoText, setText] = useState('');
+    // const [photoPlace, setPlace] = useState('');
+    // const [photoPic, setPic] = useState('');
+
     const [characterCount, setCharacterCount] = useState(0);
     const [addPhoto, { error }] = useMutation(ADD_PHOTO, {
         update(cache, { data: { addPhoto } }) {
@@ -32,8 +35,19 @@ const PhotoForm = () => {
 
     const handleChange = event => {
         if (event.target.value.length <= 280) {
-            setText(event.target.value);
-            setCharacterCount(event.target.value.length);
+            if (event.target.id === "photo-text") {
+                console.log(event.target.id);
+                setText(event.target.value);
+                setCharacterCount(event.target.value.length);
+            }
+            else if (event.target.id === "picLink-text") {
+                console.log(event.target.id);
+                // setPic(event.target.value);
+            }
+            else if (event.target.id === "place-text") {
+                console.log(event.target.id);
+                // setPlace(event.target.value);
+            }
         }
     };
 
@@ -44,10 +58,14 @@ const PhotoForm = () => {
             // add photo to database
             await addPhoto({
                 variables: { photoText }
+                //variables: { photoText , photoPlace, photoPic}
             });
 
             // clear form value
             setText('');
+            // setPlace('');
+            // setPic('');
+
             setCharacterCount(0);
         } catch (e) {
             console.error(e);
@@ -57,7 +75,7 @@ const PhotoForm = () => {
     return (
         <div>
             <p className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}>
-                Character Count: {characterCount}/280
+                Character Count for Text: {characterCount}/280
                 {error && <span className="ml-2">Something went wrong...</span>}
             </p>
             <form className="flex-row justify-center justify-space-between-md align-stretch"
@@ -66,19 +84,22 @@ const PhotoForm = () => {
                     <textarea
                         placeholder="Insert Place..."
                         // value={photoPlace}
+                        id="place-text"
                         className="form-input col-12 col-md-9"
-                    // onChange={handleChange}
+                        onChange={handleChange}
                     ></textarea>
                     <textarea
                         placeholder="Insert Link for Pic..."
                         // value={photoPic}
+                        id="picLink-text"
                         className="form-input col-12 col-md-9"
-                    // onChange={handleChange}
+                        onChange={handleChange}
                     ></textarea>
                 </div>
                 <textarea
-                    placeholder="Here's a new photo..."
+                    placeholder="Any background story or your vacation memories for the photo that you want to share with others"
                     value={photoText}
+                    id="photo-text"
                     className="form-input col-12 col-md-9"
                     onChange={handleChange}
                 ></textarea>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faMapLocationDot, faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 
 
 const PhotoList = ({ photos, title }) => {
@@ -26,21 +26,40 @@ const PhotoList = ({ photos, title }) => {
               posted photo on {photo.createdAt}
             </p>
             <div className="card-body">
-              {/* <img src={photo.link}} className="my-2 photo-pic" alt={place} /> //alt can be anything*/}
+              {/* <img src={photo.link}} className="my-2 photo-pic" alt={photo.place} /> //alt can be anything*/}
               <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"
                 className="my-2 photo-pic" alt="new-pic" />
               <div>
-                {/* {photo.place} */}
-                <h4>Place <span>  </span>
-                { /*href=`https://www.google.com/maps/place/${photo.place}`*/}
-                <a href="https://www.google.com/maps/place/Vancouver" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faMapLocationDot} size="xl" />
-                </a>
+
+                <h4>
+                  {/* Google Search with photo place */}
+                  {/*<a href=`https://www.google.com/search?q=${photo.place}` target="_blank"
+                    rel="noopener noreferrer" className='search-place'>
+                    {photo.place}
+                    </a>*/}
+                  <a href="https://www.google.com/search?q=Vancouver" target="_blank"
+                    rel="noopener noreferrer" className='search-place'>
+                    Vancouver
+                  </a>
+                  <span>  </span>
+                  {/* Google Map with photo place */}
+                  { /*href=`https://www.google.com/maps/place/${photo.place}`*/}
+                  <a href="https://www.google.com/maps/place/Vancouver" target="_blank"
+                    rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faMapLocationDot} size="xl" />
+                  </a>
+                  <span> </span>
+                  {/* Expedia (Things to do) with photo place */}
+                  { /*href=`https://www.expedia.ca/things-to-do/search?location=${photo.place}`*/}
+                  <a href="https://www.expedia.ca/things-to-do/search?location=Vancouver"
+                    target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faPeopleGroup} size="xl" />
+                  </a>
                 </h4>
               </div>
               <p>{photo.photoText}</p>
               <Link to={`/photo/${photo._id}`}>
-                <p className="mb-0">
+                <p className="mb-0 reaction-count">
                   Reactions: {photo.reactionCount} || Click here to{' '}
                   {photo.reactionCount ? 'see' : 'start'} the discussion!
                 </p>

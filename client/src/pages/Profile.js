@@ -92,7 +92,7 @@ const Profile = () => {
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark display-inline-block">
-          Welcome to {userParam ? `${user.username}'s` : 'your'} profile.
+          {userParam ? `Welcome to ${user.username}'s` : 'Here is your'} profile.
         </h2>
 
         {Auth.loggedIn() && userParam && (
