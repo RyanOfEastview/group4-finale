@@ -68,6 +68,21 @@ const PhotoForm = () => {
                     className="form-input col-12 col-md-9"
                     onChange={handleChange}
                 ></textarea>
+                <div>
+                    <textarea
+                        placeholder="Insert Place..."
+                        // value={photoPlace}
+                        className="form-input col-12 col-md-9"
+                    // onChange={handleChange}
+                    ></textarea>
+                    <textarea
+                        placeholder="Insert Link for Pic..."
+                        // value={photoPic}
+                        className="form-input col-12 col-md-9"
+                    // onChange={handleChange}
+                    ></textarea>
+                </div>
+
                 <button className="btn col-12 col-md-3" type="submit">
                     Submit
                 </button>

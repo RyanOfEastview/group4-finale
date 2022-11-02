@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
+
 
 const PhotoList = ({ photos, title }) => {
   if (!photos.length) {
@@ -27,9 +30,13 @@ const PhotoList = ({ photos, title }) => {
               <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"
                 className="my-2 photo-pic" alt="new-pic" />
               <div>
-                { /*src=`https://www.google.com/maps/place/${photo.place}`*/}
-                <a href='https://www.google.com/maps/place/Vancouver' target="_blank"
-                  rel="noopener noreferrer">Map</a>
+                {/* {photo.place} */}
+                <h4>Place <span>  </span>
+                { /*href=`https://www.google.com/maps/place/${photo.place}`*/}
+                <a href="https://www.google.com/maps/place/Vancouver" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faMapLocationDot} size="xl" />
+                </a>
+                </h4>
               </div>
               <p>{photo.photoText}</p>
               <Link to={`/photo/${photo._id}`}>
