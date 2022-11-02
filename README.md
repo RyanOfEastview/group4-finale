@@ -42,7 +42,7 @@ This is how the comment page looks after loggin in.
 
 ## License
 
-&copy; 2022 by Hiu Sum Jaime Yue, Spencer Cole and Ryan McCarthy
+&copy; 2022 by Hiu Sum Jaime Yue & Ryan McCarthy
 
 ## Contributing
 
