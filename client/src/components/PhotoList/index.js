@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from '../Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocationDot, faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
 
 
 const PhotoList = ({ photos, title }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState();
+
   if (!photos.length) {
     return <h3>No Memories Yet</h3>;
   }
 
+  const toggleModal = (photo, i) => {
+    setCurrentPhoto({ ...photo, index: i });
+    setIsModalOpen(!isModalOpen);
+  }
+
   return (
     <div>
+      {isModalOpen && (
+        <Modal currentPhoto={currentPhoto} onClose={toggleModal} />
+      )}
       <h3>{title}</h3>
       {photos &&
-        photos.map(photo => (
+        photos.map((photo, i) => (
           <div key={photo._id} className="card mb-3">
             <p className="card-header">
               <Link
@@ -28,7 +40,8 @@ const PhotoList = ({ photos, title }) => {
             <div className="card-body">
               {/* <img src={photo.link}} className="my-2 photo-pic" alt={photo.place} /> //alt can be anything*/}
               <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"
-                className="my-2 photo-pic" alt="new-pic" />
+                className="my-2 photo-pic" alt="new-pic"
+                onClick={() => toggleModal(photo, i)} />
               <div>
 
                 <h4>

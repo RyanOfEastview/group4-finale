@@ -141,9 +141,10 @@ nav a:hover {
   transition: all 0.5s;
 }
 
-.pill{
+.pill {
   border: 3px solid var(--border-color);
 }
+
 .btn:hover {
   color: var(--card-top);
   background-color: var(--word);
@@ -198,6 +199,37 @@ nav a:hover {
   max-width: 150px;
   margin: 35px auto auto 0;
   border-radius: 30px;
+}
+
+/*Modal*/
+.modalBackdrop {
+  background: rgba(0, 0, 0, .65);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.modalContainer {
+  background: var(--darker);
+  border-radius: 5px;
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 15px;
+  width: 960px;
+}
+.modalContainer img{
+  max-width: 100%;
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: var(--light);
 }
 
 /* FORM */
@@ -883,7 +915,7 @@ footer h5 {
   background-color: var(--black);
 }
 
-.find-friends{
+.find-friends {
   background-color: var(--card-body);
   color: var(--word);
   border-radius: var(--border-radius);
