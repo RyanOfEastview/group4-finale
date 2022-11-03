@@ -1,10 +1,12 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_PHOTOS = gql`
   query photos($username: String) {
     photos(username: $username) {
       _id
       photoText
+      photoPlace
+      photoLink
       createdAt
       username
       reactionCount
@@ -23,6 +25,8 @@ export const QUERY_PHOTO = gql`
     photo(_id: $id) {
       _id
       photoText
+      photoPlace
+      photoLink
       createdAt
       username
       reactionCount
@@ -50,6 +54,8 @@ export const QUERY_USER = gql`
       photos {
         _id
         photoText
+        photoPlace
+        photoLink
         createdAt
         reactionCount
       }
@@ -67,6 +73,8 @@ export const QUERY_ME = gql`
       photos {
         _id
         photoText
+        photoPlace
+        photoLink
         createdAt
         reactionCount
         reactions {

@@ -5,8 +5,8 @@ import { QUERY_PHOTOS, QUERY_ME } from '../../utils/queries';
 
 const PhotoForm = () => {
     const [photoText, setText] = useState('');
-    // const [photoPlace, setPlace] = useState('');
-    // const [photoPic, setPic] = useState('');
+    const [photoPlace, setPlace] = useState('');
+    const [photoPic, setPic] = useState('');
 
     const [characterCount, setCharacterCount] = useState(0);
     const [addPhoto, { error }] = useMutation(ADD_PHOTO, {
@@ -42,11 +42,11 @@ const PhotoForm = () => {
             }
             else if (event.target.id === "picLink-text") {
                 console.log(event.target.id);
-                // setPic(event.target.value);
+                setPic(event.target.value);
             }
             else if (event.target.id === "place-text") {
                 console.log(event.target.id);
-                // setPlace(event.target.value);
+                setPlace(event.target.value);
             }
         }
     };
@@ -57,14 +57,14 @@ const PhotoForm = () => {
         try {
             // add photo to database
             await addPhoto({
-                variables: { photoText }
-                //variables: { photoText , photoPlace, photoPic}
+                // variables: { photoText }
+                variables: { photoText , photoPlace, photoPic}
             });
 
             // clear form value
             setText('');
-            // setPlace('');
-            // setPic('');
+            setPlace('');
+            setPic('');
 
             setCharacterCount(0);
         } catch (e) {
@@ -83,14 +83,14 @@ const PhotoForm = () => {
                 <div>
                     <textarea
                         placeholder="Insert Place..."
-                        // value={photoPlace}
+                        value={photoPlace}
                         id="place-text"
                         className="form-input col-12 col-md-9"
                         onChange={handleChange}
                     ></textarea>
                     <textarea
                         placeholder="Insert Link for Pic..."
-                        // value={photoPic}
+                        value={photoPic}
                         id="picLink-text"
                         className="form-input col-12 col-md-9"
                         onChange={handleChange}

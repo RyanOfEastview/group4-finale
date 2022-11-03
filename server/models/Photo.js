@@ -1,37 +1,49 @@
-const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
-const dateFormat = require('../utils/dateFormat');
+const { Schema, model } = require("mongoose");
+const reactionSchema = require("./Reaction");
+const dateFormat = require("../utils/dateFormat");
 
 const photoSchema = new Schema(
   {
     photoText: {
       type: String,
-      required: 'You need to leave a photo!',
+      required: "You need to leave a photo!",
       minlength: 1,
-      maxlength: 280
+      maxlength: 280,
+    },
+    photoPlace: {
+      type: String,
+      required: "You need to leave a place!",
+      minlength: 1,
+      maxlength: 280,
+    },
+    photoLink: {
+      type: String,
+      required: "You need to leave a link!",
+      minlength: 1,
+      maxlength: 280,
     },
     createdAt: {
       type: Date,
       default: Date.now,
-      get: timestamp => dateFormat(timestamp)
+      get: (timestamp) => dateFormat(timestamp),
     },
     username: {
       type: String,
-      required: true
+      required: true,
     },
-    reactions: [reactionSchema]
+    reactions: [reactionSchema],
   },
   {
     toJSON: {
-      getters: true
-    }
+      getters: true,
+    },
   }
 );
 
-photoSchema.virtual('reactionCount').get(function() {
+photoSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });
 
-const Photo = model('Photo', photoSchema);
+const Photo = model("Photo", photoSchema);
 
 module.exports = Photo;

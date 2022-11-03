@@ -1,9 +1,9 @@
-const faker = require('faker');
+const faker = require("faker");
 
-const db = require('../config/connection');
-const { Photo, User } = require('../models');
+const db = require("../config/connection");
+const { Photo, User } = require("../models");
 
-db.once('open', async () => {
+db.once("open", async () => {
   await Photo.deleteMany({});
   await User.deleteMany({});
 
@@ -28,7 +28,9 @@ db.once('open', async () => {
     let friendId = userId;
 
     while (friendId === userId) {
-      const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+      const randomUserIndex = Math.floor(
+        Math.random() * createdUsers.ops.length
+      );
       friendId = createdUsers.ops[randomUserIndex];
     }
 
@@ -38,50 +40,73 @@ db.once('open', async () => {
   // create photos
   let createdPhotos = [];
 
-  // const photoInfo = [
-  //   {
-  //     place: 'Vancouver', picLink: "www.xxx"
-  //   },
-  //   {
-  //     place: 'Osaka', picLink: "www.xxx"
-  //   },
-  //   {
-  //     place: 'New York', picLink: "www.xxx"
-  //   },
-  //   {
-  //     place: 'Seattle', picLink: "www.xxx"
-  //   },
-  //   {
-  //     place: 'Toronto', picLink: "www.xxx"
-  //   },
-  //   {
-  //     place: 'Hong Kong', picLink: "www.xxx"
-  //   },
-  //   {
-  //     place: 'Tokyo', picLink: "www.xxx"
-  //   }
-  //   ,
-  //   {
-  //     place: 'London', picLink: "www.xxx"
-  //   }
-  //   ,
-  //   {
-  //     place: 'Sweden', picLink: "www.xxx"
-  //   }
-  //   ,
-  //   {
-  //     place: 'Madrid', picLink: "www.xxx"
-  //   }];
+  const photoInfo = [
+    {
+      place: "Vancouver",
+      picLink:
+        "https://en.wikipedia.org/wiki/Vancouver#/media/File:Concord_Pacific_Master_Plan_Area.jpg",
+    },
+    {
+      place: "Osaka",
+      picLink:
+        "https://en.wikipedia.org/wiki/Osaka#/media/File:Osaka_Castle_03bs3200.jpg",
+    },
+    {
+      place: "New York",
+      picLink:
+        "https://en.wikipedia.org/wiki/New_York_City#/media/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+    },
+    {
+      place: "Seattle",
+      picLink:
+        "https://en.wikipedia.org/wiki/Seattle#/media/File:Downtown_Seattle_skyline_from_Kerry_Park_-_October_2019.jpg",
+    },
+    {
+      place: "Toronto",
+      picLink:
+        "https://en.wikipedia.org/wiki/Toronto#/media/File:Toronto_Skyline_Summer_2020.jpg",
+    },
+    {
+      place: "Hong Kong",
+      picLink:
+        "https://en.wikipedia.org/wiki/Hong_Kong#/media/File:Hong_Kong_at_night.jpg",
+    },
+    {
+      place: "Tokyo",
+      picLink:
+        "https://en.wikipedia.org/wiki/Tokyo#/media/File:Skyscrapers_of_Shinjuku_2009_January.jpg",
+    },
+    {
+      place: "London",
+      picLink:
+        "https://en.wikipedia.org/wiki/City_of_London#/media/File:Cityoflondontowerbridge.jpg",
+    },
+    {
+      place: "Stockholm",
+      picLink:
+        "https://en.wikipedia.org/wiki/Stockholm#/media/File:View_of_Stockholm-170351.jpg",
+    },
+    {
+      place: "Madrid",
+      picLink:
+        "https://en.wikipedia.org/wiki/Madrid#/media/File:Panorama_de_Madrid_desde_el_parque_de_San_Isidro.JPG",
+    },
+  ];
 
   for (let i = 0; i < 10; i += 1) {
     const photoText = faker.lorem.words(Math.round(Math.random() * 10) + 1);
 
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username, _id: userId } = createdUsers.ops[randomUserIndex];
-
-    const createdPhoto = await Photo.create({ photoText, username });
-    // const createdPhoto = await Photo.create({ photoText,
-    // username, photoInfo.place, photoInfo.picLink });
+    const photoPlace = photoInfo[i].place;
+    const photoLink = photoInfo[i].picLink;
+    // const createdPhoto = await Photo.create({ photoText, username });
+    const createdPhoto = await Photo.create({
+      photoText,
+      username,
+      photoPlace,
+      photoLink,
+    });
 
     const updatedUser = await User.updateOne(
       { _id: userId },
@@ -108,6 +133,6 @@ db.once('open', async () => {
     );
   }
 
-  console.log('all done!');
+  console.log("all done!");
   process.exit(0);
 });
