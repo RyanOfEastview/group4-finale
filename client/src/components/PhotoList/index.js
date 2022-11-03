@@ -10,12 +10,12 @@ const PhotoList = ({ photos, title }) => {
   if (!photos.length) {
     return <h3>No Memories Yet</h3>;
   }
-
+  console.log(photos);
   return (
     <div>
       <h3>{title}</h3>
       {photos &&
-        photos.map((photo) => (
+        photos.map((photo, i) => (
           <div key={photo._id} className="card mb-3">
             <p className="card-header">
               <Link
@@ -32,7 +32,7 @@ const PhotoList = ({ photos, title }) => {
                 src={photo.photoLink}
                 className="my-2 photo-pic"
                 alt={photo.photoPlace}
-                key={photo.photoLink}
+                key={i}
               />
               {/* <img
                 src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"

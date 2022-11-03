@@ -44,12 +44,12 @@ db.once("open", async () => {
     {
       place: "Vancouver",
       picLink:
-        "https://en.wikipedia.org/wiki/Vancouver#/media/File:Concord_Pacific_Master_Plan_Area.jpg",
+        "https://images.unsplash.com/photo-1527960669566-f882ba85a4c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     },
     {
       place: "Osaka",
       picLink:
-        "https://en.wikipedia.org/wiki/Osaka#/media/File:Osaka_Castle_03bs3200.jpg",
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/278px-Osaka_Castle_03bs3200.jpg',
     },
     {
       place: "New York",
