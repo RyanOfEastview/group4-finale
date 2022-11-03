@@ -2,11 +2,7 @@
 
 ## Description
 
-<<<<<<< HEAD
-We are Group4, consists of Hiu Sum Jaime Yue and Ryan McCarthy.
-=======
 We are Group4, consisting of Hiu Sum Jaime Yue & Ryan McCarthy.
->>>>>>> baef6726f92d0677467e027df3cdff2eb833e118
 
 This is GROUP4 - Vacation Memories, a vacation memories web application that allows user to post and comment on vacation photos.  
 When you open the vacation memories web application, you can see the.
@@ -16,7 +12,7 @@ The technologies we used in this project is Node.js, Express.js, React, Apollo S
 
 Below are the links to the deployed application and this repository. Screenshots are shown in the Usage Section.
 
-Deployed application:  
+Deployed application: https://vacation-memories-group4.herokuapp.com/        
 Github repository: https://github.com/RyanOfEastview/group4-finale
 
 ## Table of Contents
