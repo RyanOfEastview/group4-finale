@@ -12,7 +12,7 @@ The technologies we used in this project is Node.js, Express.js, React, Apollo S
 
 Below are the links to the deployed application and this repository. Screenshots are shown in the Usage Section.
 
-Deployed application:  
+Deployed application: https://vacation-memories-group4.herokuapp.com/
 Github repository: https://github.com/RyanOfEastview/group4-finale
 
 ## Table of Contents
