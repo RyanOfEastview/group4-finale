@@ -22,7 +22,7 @@ const Footer = () => {
       <div>
         <h5>
           <a
-            href="https://ryanofeastview.github.io/personal-bio/"
+            href="https://ryanofeastview.github.io/react-portfolio/"
             target="_blank"
             rel="noopener noreferrer"
           >
