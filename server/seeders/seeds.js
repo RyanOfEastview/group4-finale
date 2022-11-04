@@ -10,7 +10,7 @@ db.once("open", async () => {
   // create user data
   const userData = [];
 
-  for (let i = 0; i < 50; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     const username = faker.internet.userName();
     const email = faker.internet.email(username);
     const password = faker.internet.password();
@@ -21,7 +21,7 @@ db.once("open", async () => {
   const createdUsers = await User.collection.insertMany(userData);
 
   // create friends
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 10; i += 1) {
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { _id: userId } = createdUsers.ops[randomUserIndex];
 
@@ -37,15 +37,76 @@ db.once("open", async () => {
     await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
   }
 
-  // create photo
+  // create photos
   let createdPhotos = [];
-  for (let i = 0; i < 100; i += 1) {
-    const photoText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+
+  const photoInfo = [
+    {
+      place: "Vancouver",
+      picLink:
+        "https://en.wikipedia.org/wiki/Vancouver#/media/File:Concord_Pacific_Master_Plan_Area.jpg",
+    },
+    {
+      place: "Osaka",
+      picLink:
+        "https://en.wikipedia.org/wiki/Osaka#/media/File:Osaka_Castle_03bs3200.jpg",
+    },
+    {
+      place: "New York",
+      picLink:
+        "https://en.wikipedia.org/wiki/New_York_City#/media/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+    },
+    {
+      place: "Seattle",
+      picLink:
+        "https://en.wikipedia.org/wiki/Seattle#/media/File:Downtown_Seattle_skyline_from_Kerry_Park_-_October_2019.jpg",
+    },
+    {
+      place: "Toronto",
+      picLink:
+        "https://en.wikipedia.org/wiki/Toronto#/media/File:Toronto_Skyline_Summer_2020.jpg",
+    },
+    {
+      place: "Hong Kong",
+      picLink:
+        "https://en.wikipedia.org/wiki/Hong_Kong#/media/File:Hong_Kong_at_night.jpg",
+    },
+    {
+      place: "Tokyo",
+      picLink:
+        "https://en.wikipedia.org/wiki/Tokyo#/media/File:Skyscrapers_of_Shinjuku_2009_January.jpg",
+    },
+    {
+      place: "London",
+      picLink:
+        "https://en.wikipedia.org/wiki/City_of_London#/media/File:Cityoflondontowerbridge.jpg",
+    },
+    {
+      place: "Stockholm",
+      picLink:
+        "https://en.wikipedia.org/wiki/Stockholm#/media/File:View_of_Stockholm-170351.jpg",
+    },
+    {
+      place: "Madrid",
+      picLink:
+        "https://en.wikipedia.org/wiki/Madrid#/media/File:Panorama_de_Madrid_desde_el_parque_de_San_Isidro.JPG",
+    },
+  ];
+
+  for (let i = 0; i < 10; i += 1) {
+    const photoText = faker.lorem.words(Math.round(Math.random() * 10) + 1);
 
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username, _id: userId } = createdUsers.ops[randomUserIndex];
-
-    const createdPhoto = await Photo.create({ photoText, username });
+    const photoPlace = photoInfo[i].place;
+    const photoLink = photoInfo[i].picLink;
+    // const createdPhoto = await Photo.create({ photoText, username });
+    const createdPhoto = await Photo.create({
+      photoText,
+      username,
+      photoPlace,
+      photoLink,
+    });
 
     const updatedUser = await User.updateOne(
       { _id: userId },
@@ -56,8 +117,8 @@ db.once("open", async () => {
   }
 
   // create reactions
-  for (let i = 0; i < 100; i += 1) {
-    const reactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+  for (let i = 0; i < 10; i += 1) {
+    const reactionBody = faker.lorem.words(Math.round(Math.random() * 10) + 1);
 
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username } = createdUsers.ops[randomUserIndex];
@@ -66,7 +127,7 @@ db.once("open", async () => {
     const { _id: photoId } = createdPhotos[randomPhotoIndex];
 
     await Photo.updateOne(
-      { _id: thoughtId },
+      { _id: photoId },
       { $push: { reactions: { reactionBody, username } } },
       { runValidators: true }
     );

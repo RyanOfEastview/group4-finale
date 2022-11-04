@@ -4,11 +4,24 @@ const dateFormat = require("../utils/dateFormat");
 
 const photoSchema = new Schema(
   {
-    //THIS WILL BE FOR THE PHOTOs COMMENTS
     photoText: {
       type: String,
+      required: "You need to leave a photo!",
+      minlength: 1,
+      maxlength: 280,
     },
-
+    photoPlace: {
+      type: String,
+      required: "You need to leave a place!",
+      minlength: 1,
+      maxlength: 280,
+    },
+    photoLink: {
+      type: String,
+      required: "You need to leave a link!",
+      minlength: 1,
+      maxlength: 280,
+    },
     createdAt: {
       type: Date,
       default: Date.now,
