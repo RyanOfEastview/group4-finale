@@ -6,13 +6,13 @@ import { QUERY_PHOTOS, QUERY_ME } from '../../utils/queries';
 const PhotoForm = () => {
     const [photoText, setText] = useState('');
     const [photoPlace, setPlace] = useState('');
-    const [photoPic, setPic] = useState('');
+    const [photoLink, setPic] = useState('');
 
     const [characterCount, setCharacterCount] = useState(0);
     const [addPhoto, { error }] = useMutation(ADD_PHOTO, {
         update(cache, { data: { addPhoto } }) {
 
-            // could potentially not exist yet, so wrap in a try/catch
+            // could potentially not exist yet -> try/catch
             try {
                 // update me array's cache
                 const { me } = cache.readQuery({ query: QUERY_ME });
@@ -36,16 +36,13 @@ const PhotoForm = () => {
     const handleChange = event => {
         if (event.target.value.length <= 280) {
             if (event.target.id === "photo-text") {
-                console.log(event.target.id);
                 setText(event.target.value);
                 setCharacterCount(event.target.value.length);
             }
             else if (event.target.id === "picLink-text") {
-                console.log(event.target.id);
                 setPic(event.target.value);
             }
             else if (event.target.id === "place-text") {
-                console.log(event.target.id);
                 setPlace(event.target.value);
             }
         }
@@ -57,8 +54,7 @@ const PhotoForm = () => {
         try {
             // add photo to database
             await addPhoto({
-                // variables: { photoText }
-                variables: { photoText , photoPlace, photoPic}
+                variables: { photoText , photoPlace, photoLink}
             });
 
             // clear form value
@@ -90,7 +86,7 @@ const PhotoForm = () => {
                     ></textarea>
                     <textarea
                         placeholder="Insert Link for Pic..."
-                        value={photoPic}
+                        value={photoLink}
                         id="picLink-text"
                         className="form-input col-12 col-md-9"
                         onChange={handleChange}

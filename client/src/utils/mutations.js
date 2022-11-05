@@ -39,8 +39,10 @@ export const ADD_FRIEND = gql`
 `;
 
 export const ADD_PHOTO = gql`
-  mutation addPhoto($photoText: String!) {
-    addPhoto(photoText: $photoText) {
+  mutation addPhoto($photoText: String!, $photoPlace: String!, 
+    $photoLink: String!) {
+    addPhoto(photoText: $photoText, 
+      photoPlace: $photoPlace, photoLink: $photoLink) {
       _id
       photoText
       photoPlace
