@@ -40,12 +40,13 @@ You can login or signup to post and put reactions on others' posted photo.
 Once you logged in, you will see a photo form on the top of the page with your friend list on the right of the posted photos.                   
 ![Homepage Auth Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/homePageAuthPreview.jpg "Homepage Auth Preview")             
 Within the photo block, you can see the username, posted time, place, user's thought on the place, a clickable link at the bottom that links to the corresponding reaction page and two icons next to the Place. The two icons are links that use the place the user put in, which open a new tab of a google map link and expedia(things to do) page.                      
-Once you clicked on the Reaction line at the bottom of the photo block, you can see the Reaction page and start inputting your reactions.                 
+Once you clicked on the Reaction line at the bottom of the photo block, you can see the Reaction page and start inputting your reactions. If you are not login, you can still see the reactions but not the reaction input form.                       
 ![reaction Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/reactionPagePreview.jpg "reaction Preview")  
 On the top of the page, you can see a "My Profile" button. Once you clicked on it, you can see your profile.                
 ![myProfile Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/myProfilePagePreview.jpg "myProfile Preview")             
-You can also see other's profile by clicking on their username.             
+You can also see other's profile by clicking on their username. If you are not login, you can still see the profile but not the Add Friend button. Once you clicked on Add Friend, you can see their usernames in your friend list.                            
 ![userProfile Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/userProfilePagePreview.jpg "userProfile Preview")  
+
 
 ## License
 
