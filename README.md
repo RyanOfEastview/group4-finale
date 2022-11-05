@@ -12,7 +12,7 @@ The technologies we used in this project is Node.js, Express.js, React, Apollo S
 
 Below are the links to the deployed application and this repository. Screenshots are shown in the Usage Section.
 
-Deployed application: https://vacation-memories-group4.herokuapp.com/
+Deployed application: https://vacation-memories-group4.herokuapp.com/     
 Github repository: https://github.com/RyanOfEastview/group4-finale
 
 ## Table of Contents
@@ -46,14 +46,18 @@ This is how the comment page looks after loggin in.
 
 ## Contributing
 
-Hiu Sum Jaime Yue -- React  
+Hiu Sum Jaime Yue -- React, Apollo      
 Ryan McCarthy -- Apollo
 
 ## Tests
+If you want to try out the Photo Form to add new photo, here is an example of what to put into the textbox.         
+PhotoText: The night view was amazing!          
+Place: Qatar            
+Link for Picture: https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/West_Bay_district_of_Doha_seen_from_the_corniche_at_night.jpg/250px-West_Bay_district_of_Doha_seen_from_the_corniche_at_night.jpg
 
 ## Questions
 
 If you have any questions about the project,
 the github link and email address of the authors are shown below.  
-Github: [Github](https://github.com/HiuSumJaimeYue), (https://github.com/RyanOfEastview)
+Github: [HiuSumJaimeYue](https://github.com/HiuSumJaimeYue), [RyanOfEastview](https://github.com/RyanOfEastview)
 & Email: [hiusumjaimeyue@cmail.carleton.ca](mailto:hiusumjaimeyue@cmail.carleton.ca), [ryanmccarthy613@gmail.com](mailto:ryanmccarthy613@gmail.com)
