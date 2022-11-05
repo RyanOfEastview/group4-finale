@@ -6,11 +6,11 @@
   --light: #ffffff;
   --black: #000000;
   --border-color: #6359b1;
-  --card-top: #55a1ff;
-  --card-body: #f5f5dc;
+  --card-top: #cdc1ff;
+  --card-body: #f5efff;
   --word: #2a1f7c;
   --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
+  --border-radius: 2rem;
   --spacing-one: calc(1rem * 0.25);
   --spacing-two: calc(1rem * 0.5);
   --spacing-three: 1rem;
@@ -35,12 +35,19 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--word);
-  background: -webkit-linear-gradient(0deg, hsla(190, 77%, 88%, 1) 0%,
-      hsla(190, 76%, 82%, 1) 12.5%, hsla(189, 75%, 75%, 1) 25%,
-      hsla(190, 74%, 59%, 1) 37.5%, hsla(190, 100%, 41%, 1) 50%,
-      hsla(190, 74%, 59%, 1) 62.5%, hsla(189, 75%, 75%, 1) 75%,
-      hsla(190, 76%, 82%, 1) 87.5%, hsla(190, 77%, 88%, 1) 100%);
-
+  /* background-color: #e5d9f2; */
+  background: -webkit-linear-gradient(
+    0deg,
+    hsla(167, 77%, 88%, 1) 0%,
+    hsla(167, 76%, 82%, 1) 12.5%,
+    hsla(167, 75%, 75%, 1) 25%,
+    hsla(167, 74%, 59%, 1) 37.5%,
+    hsl(167, 100%, 41%) 50%,
+    hsla(167, 74%, 59%, 1) 62.5%,
+    hsla(167, 75%, 75%, 1) 75%,
+    hsla(167, 76%, 82%, 1) 87.5%,
+    hsla(167, 77%, 88%, 1) 100%
+  );
 }
 
 h1,
@@ -49,7 +56,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: sans-serif;
+  font-family: "indie flower";
   font-weight: 700;
   margin: 5px 0;
   line-height: 1.25;
@@ -102,6 +109,7 @@ a {
 } */
 
 nav {
+  font-weight: bold;
   width: 100%;
   justify-content: center;
 }
@@ -115,7 +123,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--light);
+  color: #00fdc8;
   background-color: var(--word);
   border-radius: var(--border-radius);
 }
@@ -129,6 +137,9 @@ nav a:hover {
 
 .btn,
 .pill {
+  font-family: "indie flower";
+  font-weight: bold;
+  color: #444545;
   font-size: 1.3rem;
   text-decoration: none;
   padding: 0.5rem 1.2rem;
@@ -137,17 +148,20 @@ nav a:hover {
   border: none;
   color: var(--word);
   outline: none;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
   background-color: var(--card-top);
   transition: all 0.5s;
 }
 
-.pill{
+.pill {
   border: 3px solid var(--border-color);
 }
 .btn:hover {
-  color: var(--card-top);
+  color: #00fdc8;
   background-color: var(--word);
-  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn:hover a {
@@ -164,19 +178,24 @@ nav a:hover {
 
 /* CARDS */
 .card {
+  font-family: "indie flower";
   margin: 0 0 20px 0;
-  border: 3px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border: 0.2rem;
+  border-radius: 2rem;
+  padding: 0.4rem;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
   background-color: var(--light);
   color: var(--black);
 }
 
 .card-header {
-  color: var(--light);
+  font-family: "indie flower";
+  color: #444545;
   margin: 0;
   background-color: var(--card-top);
   padding: 0.625rem;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  border-radius: 2rem;
 }
 
 .card-header a:hover {
@@ -187,6 +206,7 @@ nav a:hover {
   padding: 2.5%;
   font-size: 1.4rem;
   background-color: var(--card-body);
+  border-radius: 2rem;
 }
 
 .card-body h4 a:hover {
@@ -218,17 +238,17 @@ nav a:hover {
   margin: 0.2rem 0;
   font-size: 1.2rem;
   border: 2px solid var(--black);
-  border-radius: var(--border-radius);
+  border-radius: 2rem;
 }
 
-[type='radio']:checked,
-[type='radio']:not(:checked) {
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
   position: absolute;
   left: -9999px;
 }
 
-[type='radio']:checked+label,
-[type='radio']:not(:checked)+label {
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
@@ -238,9 +258,9 @@ nav a:hover {
   margin-right: 0.2rem;
 }
 
-[type='radio']:checked+label:before,
-[type='radio']:not(:checked)+label:before {
-  content: '';
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -251,9 +271,9 @@ nav a:hover {
   background: #fff;
 }
 
-[type='radio']:checked+label:after,
-[type='radio']:not(:checked)+label:after {
-  content: '';
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: "";
   width: 12px;
   height: 12px;
   background-color: var(--secondary);
@@ -265,13 +285,13 @@ nav a:hover {
   transition: all 0.2s ease;
 }
 
-[type='radio']:not(:checked)+label:after {
+[type="radio"]:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-[type='radio']:checked+label:after {
+[type="radio"]:checked + label:after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -288,9 +308,14 @@ nav a:hover {
 
 footer {
   position: relative;
-  background: -webkit-linear-gradient(0deg, hsla(16, 65%, 68%, 1) 0%,
-      hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
-      hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
+  background: -webkit-linear-gradient(
+    0deg,
+    hsla(16, 65%, 68%, 1) 0%,
+    hsla(15, 100%, 91%, 1) 25%,
+    hsla(15, 100%, 91%, 1) 50%,
+    hsla(15, 100%, 91%, 1) 75%,
+    hsla(16, 65%, 68%, 1) 100%
+  );
   padding: 35px 22px;
   display: flex;
   justify-content: space-around;
@@ -866,9 +891,14 @@ footer h5 {
 }
 
 .bg-secondary {
-  background: -webkit-linear-gradient(0deg, hsla(16, 65%, 68%, 1) 0%,
-      hsla(15, 100%, 91%, 1) 25%, hsla(15, 100%, 91%, 1) 50%,
-      hsla(15, 100%, 91%, 1) 75%, hsla(16, 65%, 68%, 1) 100%);
+  background: -webkit-linear-gradient(
+    0deg,
+    hsla(16, 65%, 68%, 1) 0%,
+    hsla(15, 100%, 91%, 1) 25%,
+    hsla(15, 100%, 91%, 1) 50%,
+    hsla(15, 100%, 91%, 1) 75%,
+    hsla(16, 65%, 68%, 1) 100%
+  );
 }
 
 .bg-tertiary {
@@ -883,7 +913,7 @@ footer h5 {
   background-color: var(--black);
 }
 
-.find-friends{
+.find-friends {
   background-color: var(--card-body);
   color: var(--word);
   border-radius: var(--border-radius);
