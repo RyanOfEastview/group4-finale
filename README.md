@@ -31,14 +31,21 @@ If you are setting the project up in your local computer, you can download the f
 ## Usage
 
 You can see a few photos posted on the homepage.  
-![Homepage Preview]( "Homepage Preview")  
-You can see the comments that were made on that movie if you  
-![comment Preview 1]( "comment Preview 1")  
-If you logged in, you can even add your comments on the movies.  
-Here is the login Page.  
-![loginPage Preview]( "loginPage Preview")  
-This is how the comment page looks after loggin in.  
-![Comment Preview 2]( "Comment Preview 2")
+![Homepage Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/homePagePreview.jpg "Homepage Preview")       
+You can see the photo more clear by clicking on the photo.
+![Modal Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/modalPreview.jpg "Modal Preview")                  
+You can login or signup to post and put reactions on others' posted photo.              
+![login Preview 1](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/loginPagePreview.jpg "login Preview 1")  ![signup Preview 1](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/signupPagePreview.jpg "signup Preview 1")                   
+
+Once you logged in, you will see a photo form on the top of the page with your friend list on the right of the posted photos.                   
+![Homepage Auth Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/homePageAuthPreview.jpg "Homepage Auth Preview")             
+Within the photo block, you can see the username, posted time, place, user's thought on the place, a clickable link at the bottom that links to the corresponding reaction page and two icons next to the Place. The two icons are links that use the place the user put in, which open a new tab of a google map link and expedia(things to do) page.                      
+Once you clicked on the Reaction line at the bottom of the photo block, you can see the Reaction page and start inputting your reactions.                 
+![reaction Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/reactionPagePreview.jpg "reaction Preview")  
+On the top of the page, you can see a "My Profile" button. Once you clicked on it, you can see your profile.                
+![myProfile Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/myProfilePagePreview.jpg "myProfile Preview")             
+You can also see other's profile by clicking on their username.             
+![userProfile Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/userProfilePagePreview.jpg "userProfile Preview")  
 
 ## License
 
