@@ -44,7 +44,7 @@ Once you clicked on the Reaction line at the bottom of the photo block, you can 
 ![reaction Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/reactionPagePreview.jpg "reaction Preview")  
 On the top of the page, you can see a "My Profile" button. Once you clicked on it, you can see your profile.                
 ![myProfile Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/myProfilePagePreview.jpg "myProfile Preview")             
-You can also see other's profile by clicking on their username. If you are not login, you can still see the profile but not the Add Friend button. Once you clicked on Add Friend, you can see their usernames in your friend list.                            
+You can also see other's profile by clicking on their username. If you are not login, you can still see the profile but not the Add Friend button. Once you clicked on the Add Friend button, you can see their usernames in your friend list.                            
 ![userProfile Preview](https://github.com/RyanOfEastview/group4-finale/blob/main/screenshots/userProfilePagePreview.jpg "userProfile Preview")  
 
 
