@@ -1,21 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMapLocationDot,
-  faPeopleGroup,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Modal from '../Modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapLocationDot, faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
+
 
 const PhotoList = ({ photos, title }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState();
+
   if (!photos.length) {
     return <h3>No Memories Yet</h3>;
   }
-  console.log(photos);
+
+  const toggleModal = (photo, i) => {
+    setCurrentPhoto({ ...photo, index: i });
+    setIsModalOpen(!isModalOpen);
+  }
+
   return (
     <div>
+      {isModalOpen && (
+        <Modal currentPhoto={currentPhoto} onClose={toggleModal} />
+      )}
       <h3>{title}</h3>
       {photos &&
-        photos.map((photo) => (
+        photos.map((photo, i) => (
           <div key={photo._id} className="card mb-3">
             <p className="card-header">
               <Link
@@ -33,12 +43,8 @@ const PhotoList = ({ photos, title }) => {
                 className="my-2 photo-pic"
                 alt={photo.photoPlace}
                 key={photo.photoLink}
+                onClick={() => toggleModal(photo, i)} 
               />
-              {/* <img
-                src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"
-                className="my-2 photo-pic"
-                alt="new-pic"
-              /> */}
               <div>
                 <h4>
                   {/* Google Search with photo place */}
