@@ -17,7 +17,6 @@ const SinglePhoto = props => {
     variables: { id: photoId }
   });
 
-  console.log(data);
   const photo = data?.photo || {};
 
   if (loading) {

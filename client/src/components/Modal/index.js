@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Modal({ onClose, currentPhoto }) {
-    console.log(currentPhoto);
     const { photoText, photoPlace, photoLink } = currentPhoto;
 
     return (

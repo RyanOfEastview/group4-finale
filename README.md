@@ -50,7 +50,7 @@ Hiu Sum Jaime Yue -- React, Apollo
 Ryan McCarthy -- Apollo
 
 ## Tests
-If you want to try out the Photo Form to add new photo, here is an example of what to put into the textbox.         
+If you want to try out the Photo Form to add new photo, here is an example of what to put in the textboxes.         
 PhotoText: The night view was amazing!          
 Place: Qatar            
 Link for Picture: https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/West_Bay_district_of_Doha_seen_from_the_corniche_at_night.jpg/250px-West_Bay_district_of_Doha_seen_from_the_corniche_at_night.jpg

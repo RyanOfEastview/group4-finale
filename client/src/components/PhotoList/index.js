@@ -48,35 +48,24 @@ const PhotoList = ({ photos, title }) => {
               <div>
                 <h4>
                   {/* Google Search with photo place */}
-                  {/* <a href=`https://www.google.com/search?q=${photo.photoPlace}` target="_blank"
+                  <a href={`https://www.google.com/search?q=${photo.photoPlace}`} target="_blank"
                     rel="noopener noreferrer" className='search-place'>
-                    alt=""
-                    key={photo.photoLink}
-                    </a> */}
-                  <a
-                    href="https://www.google.com/search?q=Vancouver"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="search-place"
-                  >
                     {photo.photoPlace}
                   </a>
                   <span> </span>
+                  
                   {/* Google Map with photo place */}
-                  {/*href=`https://www.google.com/maps/place/${photo.place}`*/}
-
-                  <a href="https://www.google.com/maps/place/Vancouver"
+                  <a href={`https://www.google.com/maps/place/${photo.photoPlace}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-
                   <FontAwesomeIcon icon={faMapLocationDot} size="xl" />
                   </a>
                   <span> </span>
+
                   {/* Expedia (Things to do) with photo place */}
-                  {/*href=`https://www.expedia.ca/things-to-do/search?location=${photo.place}`*/}
                   <a
-                    href="https://www.expedia.ca/things-to-do/search?location=Vancouver"
+                    href={`https://www.expedia.ca/things-to-do/search?location=${photo.photoPlace}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

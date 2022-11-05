@@ -5,6 +5,8 @@
   --quatrinary: #cadbda;
   --light: #ffffff;
   --black: #000000;
+  --dark:#444545;
+  --modal-bg:#111111;
   --border-color: #6359b1;
   --card-top: #cdc1ff;
   --card-body: #f5efff;
@@ -139,7 +141,7 @@ nav a:hover {
 .pill {
   font-family: "indie flower";
   font-weight: bold;
-  color: #444545;
+  color: var(--dark);
   font-size: 1.3rem;
   text-decoration: none;
   padding: 0.5rem 1.2rem;
@@ -192,7 +194,7 @@ nav a:hover {
 
 .card-header {
   font-family: "indie flower";
-  color: #444545;
+  color: var(--dark);
   margin: 0;
   background-color: var(--card-top);
   padding: 0.625rem;
@@ -234,7 +236,7 @@ nav a:hover {
 }
 
 .modalContainer {
-  background: var(--darker);
+  background: var(--modal-bg);
   border-radius: 5px;
   max-width: 100%;
   margin: 50px auto;
@@ -912,6 +914,10 @@ footer h5 {
 
 .text-black {
   color: var(--black);
+}
+
+.text-dark{
+  color: var(--dark);
 }
 
 .text-error {
