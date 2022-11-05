@@ -44,7 +44,7 @@ db.once("open", async () => {
     {
       place: "Vancouver",
       picLink:
-        "https://images.unsplash.com/photo-1527960669566-f882ba85a4c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Concord_Pacific_Master_Plan_Area.jpg/432px-Concord_Pacific_Master_Plan_Area.jpg"
     },
     {
       place: "Osaka",
@@ -54,42 +54,42 @@ db.once("open", async () => {
     {
       place: "New York",
       picLink:
-        "https://en.wikipedia.org/wiki/New_York_City#/media/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg/268px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg",
     },
     {
       place: "Seattle",
       picLink:
-        "https://en.wikipedia.org/wiki/Seattle#/media/File:Downtown_Seattle_skyline_from_Kerry_Park_-_October_2019.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Seattle_Center_as_night_falls.jpg/177px-Seattle_Center_as_night_falls.jpg",
     },
     {
       place: "Toronto",
       picLink:
-        "https://en.wikipedia.org/wiki/Toronto#/media/File:Toronto_Skyline_Summer_2020.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Toronto_Skyline_Summer_2020.jpg/238px-Toronto_Skyline_Summer_2020.jpg",
     },
     {
       place: "Hong Kong",
       picLink:
-        "https://en.wikipedia.org/wiki/Hong_Kong#/media/File:Hong_Kong_at_night.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Hong_Kong_at_night.jpg/1150px-Hong_Kong_at_night.jpg",
     },
     {
       place: "Tokyo",
       picLink:
-        "https://en.wikipedia.org/wiki/Tokyo#/media/File:Skyscrapers_of_Shinjuku_2009_January.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Shibuya_Crossing_%28181547621%29.jpeg/143px-Shibuya_Crossing_%28181547621%29.jpeg",
     },
     {
       place: "London",
       picLink:
-        "https://en.wikipedia.org/wiki/City_of_London#/media/File:Cityoflondontowerbridge.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/London_Montage_L.jpg/275px-London_Montage_L.jpg",
     },
     {
       place: "Stockholm",
       picLink:
-        "https://en.wikipedia.org/wiki/Stockholm#/media/File:View_of_Stockholm-170351.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Stockholms_slott_August_2015_01.jpg/288px-Stockholms_slott_August_2015_01.jpg",
     },
     {
       place: "Madrid",
       picLink:
-        "https://en.wikipedia.org/wiki/Madrid#/media/File:Panorama_de_Madrid_desde_el_parque_de_San_Isidro.JPG",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Panorama_de_Madrid_desde_el_parque_de_San_Isidro.JPG/268px-Panorama_de_Madrid_desde_el_parque_de_San_Isidro.JPG",
     },
   ];
 
