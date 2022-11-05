@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_PHOTO } from '../utils/queries';
 import ReactionList from '../components/ReactionList';
 import ReactionForm from '../components/ReactionForm';
 import Auth from '../utils/auth';
+import Modal from '../components/Modal';
 
 const SinglePhoto = props => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState();
+
   const { id: photoId } = useParams();
 
   const { loading, data } = useQuery(QUERY_PHOTO, {
@@ -19,8 +23,17 @@ const SinglePhoto = props => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
+  const toggleModal = (photo) => {
+    setCurrentPhoto(photo);
+    setIsModalOpen(!isModalOpen);
+  }
+
   return (
     <div>
+      {isModalOpen && (
+        <Modal currentPhoto={currentPhoto} onClose={toggleModal} />
+      )}
       <div className="card mb-3">
         <p className="card-header">
           <Link
@@ -30,9 +43,9 @@ const SinglePhoto = props => {
           photo on {photo.createdAt}
         </p>
         <div className="card-body">
-          {/* <img src={photo.link}} className="my-2 photo-pic" alt={place} /> //alt can be anything*/}
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"
-            className="my-2 photo-pic" alt="new-pic" />
+          <img src={photo.photoLink}
+            className="my-2 photo-pic" alt="new-pic"
+            onClick={() => toggleModal(photo)} />
           <p>{photo.photoText}</p>
         </div>
       </div>
