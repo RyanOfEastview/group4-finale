@@ -10,7 +10,7 @@ const PhotoList = ({ photos, title }) => {
   if (!photos.length) {
     return <h3>No Memories Yet</h3>;
   }
-
+  console.log(photos);
   return (
     <div>
       <h3>{title}</h3>
@@ -53,19 +53,19 @@ const PhotoList = ({ photos, title }) => {
                     rel="noopener noreferrer"
                     className="search-place"
                   >
-                    Vancouver
+                    {photo.photoPlace}
                   </a>
                   <span> </span>
                   {/* Google Map with photo place */}
                   {/*href=`https://www.google.com/maps/place/${photo.place}`*/}
 
-                  {/* <a href=`https://www.google.com/maps/place/${photo.photoPlace}`
+                  <a href="https://www.google.com/maps/place/Vancouver"
                     target="_blank"
                     rel="noopener noreferrer"
-                  /> */}
+                  >
 
-                  {/* <FontAwesomeIcon icon={faMapLocationDot} size="xl" />
-                  </a> */}
+                  <FontAwesomeIcon icon={faMapLocationDot} size="xl" />
+                  </a>
                   <span> </span>
                   {/* Expedia (Things to do) with photo place */}
                   {/*href=`https://www.expedia.ca/things-to-do/search?location=${photo.place}`*/}
